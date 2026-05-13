@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marion Jensen — Author, Educator, Tinkerer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF7F2;
+      --warm-white: #FFFDF9;
+      --ink: #2C2A26;
+      --ink-soft: #5A5650;
+      --accent: #C0562B;
+      --accent-hover: #A8471F;
+      --rule: #E2DDD5;
+      --card-bg: #FFFFFF;
+      --shadow: 0 1px 3px rgba(44,42,38,0.06), 0 4px 12px rgba(44,42,38,0.04);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      font-weight: 400;
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- Header --- */
+    .site-header {
+      text-align: center;
+      padding: 72px 24px 48px;
+    }
+
+    .site-header h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .site-header .tagline {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    /* --- Main content --- */
+    .content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* --- Section spacing --- */
+    section {
+      margin-bottom: 56px;
+    }
+
+    section h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    section p {
+      margin-bottom: 14px;
+      color: var(--ink-soft);
+    }
+
+    section p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    /* --- Bio with photo --- */
+    .bio-section {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .bio-photo {
+      flex-shrink: 0;
+      width: 180px;
+      height: 220px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--rule);
+    }
+
+    .bio-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .bio-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      text-align: center;
+      padding: 16px;
+      line-height: 1.4;
+    }
+
+    .bio-text p:first-child {
+      margin-top: 0;
+    }
+
+    /* --- Book card --- */
+    .book-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--rule);
+    }
+
+    .book-card-inner {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .book-cover {
+      flex-shrink: 0;
+      width: 140px;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(44,42,38,0.12), 0 1px 3px rgba(44,42,38,0.08);
+    }
+
+    .book-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .book-cover-placeholder {
+      width: 100%;
+      aspect-ratio: 2/3;
+      background: var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+      text-align: center;
+      padding: 12px;
+      line-height: 1.4;
+    }
+
+    .book-card h2 {
+      margin-bottom: 4px;
+    }
+
+    .book-card .book-subtitle {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .book-links {
+      margin-top: 16px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .book-link {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .bookstore-note {
+      margin-top: 6px;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    .video-offer {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .video-offer p {
+      font-size: 0.95rem;
+    }
+
+    /* --- Divider --- */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 56px 0;
+    }
+
+    /* --- Contact --- */
+    .contact-section p {
+      margin-bottom: 14px;
+    }
+
+    .email-display {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      color: var(--ink);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    /* --- Footer --- */
+    .site-footer {
+      text-align: center;
+      padding: 40px 24px 56px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .site-footer p {
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .site-footer a {
+      font-weight: 500;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 600px) {
+      .bio-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .bio-photo {
+        width: 160px;
+        height: 200px;
+      }
+
+      .book-card {
+        padding: 24px;
+      }
+
+      .book-card-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .book-cover {
+        width: 120px;
+      }
+
+      .book-links {
+        justify-content: center;
+      }
+
+      .site-header {
+        padding: 48px 24px 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Marion Jensen</h1>
+    <p class="tagline">Author · Educator · Technology Tinkerer</p>
+  </header>
+
+  <main class="content">
+
+    <!-- Bio -->
+    <section class="bio-section">
+      <div class="bio-photo">
+        <!-- Replace the placeholder below with your photo:
+             1. Add your image file (e.g., marion.jpg) to the same folder as this file
+             2. Replace the <div class="bio-photo-placeholder">...</div> with:
+                <img src="marion.jpg" alt="Marion Jensen"> -->
+        <img src="marion.jpg" alt="Marion Jensen">
+      </div>
+      <div class="bio-text">
+        <p>I write silly books with heart, I teach people how to learn, and I tinker with technology to make learning better.</p>
+        <p>By day, I'm an instructional designer helping people get smarter at their jobs. By night — okay, sometimes also by day — I'm a novelist and someone who believes that the best stories and the best classrooms have the same thing in common: they meet you where you are.</p>
+      </div>
+    </section>
+
+    <!-- Books -->
+    <section>
+      <div class="book-card">
+        <div class="book-card-inner">
+          <div class="book-cover">
+            <!-- Replace the placeholder below with your cover image:
+                 1. Add your cover image (e.g., almost-super-cover.jpg) to the same folder
+                 2. Replace the <div class="book-cover-placeholder">...</div> with:
+                    <img src="almost-super-cover.jpg" alt="Almost Super book cover"> -->
+            <img src="almost-super-cover.jpg" alt="Almost Super book cover">
+          </div>
+          <div class="book-details">
+            <h2>Almost Super</h2>
+            <div class="book-subtitle">Published by HarperCollins</div>
+            <p>Two brothers expect to receive amazing superpowers on their birthday. Instead, one gets the ability to change his belly button from an innie to an outie. On command. The other? He can turn his skin plaid. Naturally, they decide to become superheroes anyway — even if it means they have to work hard at it.</p>
+            <p><em>Almost Super</em> has been chosen by schools across the country as part of the <a href="https://readtothem.org/one-school-one-book/" target="_blank">One School, One Book</a> program, where entire schools — kindergarten through fifth grade — read the same book together as a community.</p>
+            <p>Its sequel, <em>Searching for Super</em>, continues the adventure.</p>
+            <div class="book-links">
+              <a class="book-link" href="https://www.kingsenglish.com/item/kmD66BQtTAjvpu06sTi6mA" target="_blank" rel="noopener">Almost Super →</a>
+              <a class="book-link" href="https://www.kingsenglish.com/item/kmD66BQtTAjrybu6CF5PwA" target="_blank" rel="noopener">Searching for Super →</a>
+            </div>
+            <p class="bookstore-note">Available at The King's English Bookshop — because local bookstores still exist, and they're wonderful.</p>
+          </div>
+        </div>
+
+        <div class="video-offer">
+          <p><strong>Reading <em>Almost Super</em> with your school?</strong> I'd love to record a short video message for your students. Drop me a line and let's make it happen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section">
+      <h2>Get in Touch</h2>
+      <p>Whether you're a school reading <em>Almost Super</em>, an educator interested in AI tutoring, or just someone who wants to say hello — I'd love to hear from you.</p>
+      <p class="email-display">marionjensen [at] gmail [dot] com</p>
+    </section>
+
+  </main>
+
+  <!-- Footer with ScaffoldAI -->
+  <footer class="site-footer">
+    <p>Interested in my technology tinkering? Check out <a href="https://github.com/marionjensen/ScaffoldAI" target="_blank" rel="noopener">ScaffoldAI</a>, my open-source AI tutor framework on GitHub.</p>
+  </footer>
+
+</body>
+</html>
