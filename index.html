@@ -3,7 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marion Jensen — Author, Educator, Tinkerer</title>
+  <title>Marion Jensen — Author of Almost Super and Searching for Super</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Official site of Marion Jensen, author of Almost Super and Searching for Super (HarperCollins). Reading Almost Super for One School, One Book? Request a free author video for your students.">
+  <link rel="canonical" href="https://marionjensen.com/">
+
+  <!-- Social sharing (Open Graph + Twitter) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marionjensen.com/">
+  <meta property="og:title" content="Marion Jensen — Author of Almost Super">
+  <meta property="og:description" content="Reading Almost Super with your school? Marion records free video messages for schools in the One School, One Book program.">
+  <meta property="og:image" content="https://marionjensen.com/almost-super-cover.jpg">
+  <meta property="og:image:alt" content="Almost Super book cover">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Favicon (inline SVG, no extra file needed) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦸</text></svg>">
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://marionjensen.com/#marion",
+        "name": "Marion Jensen",
+        "url": "https://marionjensen.com/",
+        "image": "https://marionjensen.com/marion-bio-image.jpg",
+        "jobTitle": "Author",
+        "sameAs": ["https://github.com/marionjensen"]
+      },
+      {
+        "@type": "Book",
+        "name": "Almost Super",
+        "author": { "@id": "https://marionjensen.com/#marion" },
+        "publisher": { "@type": "Organization", "name": "HarperCollins" },
+        "isbn": "9780062209627",
+        "datePublished": "2014",
+        "image": "https://marionjensen.com/almost-super-cover.jpg",
+        "url": "https://marionjensen.com/"
+      },
+      {
+        "@type": "Book",
+        "name": "Searching for Super",
+        "author": { "@id": "https://marionjensen.com/#marion" },
+        "publisher": { "@type": "Organization", "name": "HarperCollins" },
+        "isbn": "9780062209597",
+        "datePublished": "2015",
+        "image": "https://marionjensen.com/searching-for-super-cover.jpg",
+        "url": "https://marionjensen.com/"
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -17,6 +72,8 @@
       --accent-hover: #A8471F;
       --rule: #E2DDD5;
       --card-bg: #FFFFFF;
+      --callout-bg: #FBF0E7;
+      --callout-rule: #EFD9C8;
       --shadow: 0 1px 3px rgba(44,42,38,0.06), 0 4px 12px rgba(44,42,38,0.04);
     }
 
@@ -94,40 +151,92 @@
       border-bottom-color: var(--accent);
     }
 
+    /* --- School video callout --- */
+    .video-callout {
+      background: var(--callout-bg);
+      border: 1px solid var(--callout-rule);
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+
+    .video-callout h2 {
+      margin-bottom: 12px;
+    }
+
+    .video-callout .fine-print {
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .callout-quote {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--ink);
+      border-left: 3px solid var(--accent);
+      padding-left: 16px;
+      margin: 18px 0 6px;
+    }
+
+    .callout-quote cite {
+      display: block;
+      font-family: 'Source Sans 3', sans-serif;
+      font-style: normal;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin-top: 4px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 11px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 10px;
+      border-bottom: none;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--accent-hover);
+      border-bottom: none;
+    }
+
+    /* --- Hero image --- */
+    .hero-image {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* --- Bio with photo --- */
     .bio-section {
       display: flex;
-      gap: 32px;
+      gap: 28px;
       align-items: flex-start;
     }
 
     .bio-photo {
-      flex-shrink: 0;
-      width: 180px;
-      height: 220px;
-      border-radius: 6px;
+      flex: 0 0 240px;
+      border-radius: 8px;
       overflow: hidden;
-      background: var(--rule);
+      box-shadow: var(--shadow);
     }
 
     .bio-photo img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
-    }
-
-    .bio-photo-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      color: var(--ink-soft);
-      text-align: center;
-      padding: 16px;
-      line-height: 1.4;
     }
 
     .bio-text p:first-child {
@@ -141,6 +250,7 @@
       padding: 32px;
       box-shadow: var(--shadow);
       border: 1px solid var(--rule);
+      margin-bottom: 28px;
     }
 
     .book-card-inner {
@@ -161,20 +271,6 @@
       width: 100%;
       height: auto;
       display: block;
-    }
-
-    .book-cover-placeholder {
-      width: 100%;
-      aspect-ratio: 2/3;
-      background: var(--rule);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      color: var(--ink-soft);
-      text-align: center;
-      padding: 12px;
-      line-height: 1.4;
     }
 
     .book-card h2 {
@@ -203,27 +299,56 @@
     }
 
     .bookstore-note {
-      margin-top: 6px;
-      font-size: 0.82rem;
+      font-size: 0.9rem;
       color: var(--ink-soft);
       font-style: italic;
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
     }
 
-    .video-offer {
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid var(--rule);
+    /* --- Testimonials --- */
+    /* --- Stat band --- */
+    .stat-band {
+      background: var(--accent);
+      border-radius: 8px;
+      text-align: center;
+      padding: 32px 28px;
     }
 
-    .video-offer p {
+    .stat-band .stat-number {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .stat-band .stat-caption {
+      color: rgba(255, 255, 255, 0.85);
       font-size: 0.95rem;
+      margin-top: 6px;
+      margin-bottom: 0;
     }
 
-    /* --- Divider --- */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 56px 0;
+    /* --- Testimonials --- */
+    .testimonials blockquote {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--ink);
+      border-left: 3px solid var(--accent);
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .testimonials cite {
+      display: block;
+      font-family: 'Source Sans 3', sans-serif;
+      font-style: normal;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      margin-top: 6px;
     }
 
     /* --- Contact --- */
@@ -234,28 +359,8 @@
     .email-display {
       font-family: 'Lora', serif;
       font-size: 1.1rem;
-      color: var(--ink);
       font-weight: 400;
       letter-spacing: 0.01em;
-    }
-
-    /* --- Footer --- */
-    .site-footer {
-      text-align: center;
-      padding: 40px 24px 56px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .site-footer p {
-      color: var(--ink-soft);
-      font-size: 0.92rem;
-      line-height: 1.6;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
-    .site-footer a {
-      font-weight: 500;
     }
 
     /* --- Responsive --- */
@@ -267,8 +372,12 @@
       }
 
       .bio-photo {
-        width: 160px;
-        height: 200px;
+        flex: none;
+        width: 220px;
+      }
+
+      .video-callout {
+        padding: 24px;
       }
 
       .book-card {
@@ -299,23 +408,37 @@
 
   <header class="site-header">
     <h1>Marion Jensen</h1>
-    <p class="tagline">Author · Educator · Technology Tinkerer</p>
+    <p class="tagline">Author of <em>Almost Super</em> · Educator · Technology Tinkerer</p>
   </header>
 
   <main class="content">
 
-    <!-- Bio -->
+    <!-- Hero image (1320 x 620). If the file is missing, this block hides itself. -->
+    <section class="hero-image">
+      <img src="marion-header-image.jpg" alt="Marion Jensen" onerror="this.parentElement.style.display='none'">
+    </section>
+
+    <!-- School video offer — the #1 thing teachers come here for -->
+    <section class="video-callout">
+      <h2>Free Author Videos for Schools</h2>
+      <p><strong>Reading <em>Almost Super</em> with your school?</strong> Hello, educators and librarians! If your school has chosen <em>Almost Super</em> for <a href="https://readtothem.org/one-school-one-book/" target="_blank" rel="noopener">One School, One Book</a> — or you're just reading it together as a class — I'd love to record a free video message for your students.</p>
+      <p>No fees, no forms, no booking agents. Email me with your school's name, where you're located, and when you're reading the book, and I'll take it from there.</p>
+      <blockquote class="callout-quote">&ldquo;Not only through your writing but offering the personal video is truly a step beyond what we imagined.&rdquo;<cite>— Elementary interventionist, Illinois</cite></blockquote>
+      <a class="btn" href="#contact" data-email data-subject="School video request — [Your School]">Request a school video</a>
+      <p class="fine-print">Yes, really free. Hearing from schools is the best part of this whole author thing.</p>
+    </section>
+
+    <!-- Bio. Photo (390 x 720) sits at its natural proportions.
+         If the file is missing, the block hides and the bio runs full width. -->
     <section class="bio-section">
       <div class="bio-photo">
-        <!-- Replace the placeholder below with your photo:
-             1. Add your image file (e.g., marion.jpg) to the same folder as this file
-             2. Replace the <div class="bio-photo-placeholder">...</div> with:
-                <img src="marion.jpg" alt="Marion Jensen"> -->
-        <img src="marion.jpg" alt="Marion Jensen">
+        <img src="marion-bio-image.jpg" alt="Marion Jensen" onerror="this.parentElement.style.display='none'">
       </div>
       <div class="bio-text">
         <p>I write silly books with heart, I teach people how to learn, and I tinker with technology to make learning better.</p>
         <p>By day, I'm an instructional designer helping people get smarter at their jobs. By night — okay, sometimes also by day — I'm a novelist and someone who believes that the best stories and the best classrooms have the same thing in common: they meet you where you are.</p>
+        <!-- MARION: new paragraph below — tweak to taste. -->
+        <p>The best part of this job is hearing from schools: entire buildings of kids reading about questionable superpowers at the same time, families turning out for Family Reading Nights, librarians restocking the sequel. That beats a cape any day.</p>
       </div>
     </section>
 
@@ -324,45 +447,89 @@
       <div class="book-card">
         <div class="book-card-inner">
           <div class="book-cover">
-            <!-- Replace the placeholder below with your cover image:
-                 1. Add your cover image (e.g., almost-super-cover.jpg) to the same folder
-                 2. Replace the <div class="book-cover-placeholder">...</div> with:
-                    <img src="almost-super-cover.jpg" alt="Almost Super book cover"> -->
             <img src="almost-super-cover.jpg" alt="Almost Super book cover">
           </div>
           <div class="book-details">
             <h2>Almost Super</h2>
             <div class="book-subtitle">Published by HarperCollins</div>
-            <p>Two brothers expect to receive amazing superpowers on their birthday. Instead, one gets the ability to change his belly button from an innie to an outie. On command. The other? He can turn his skin plaid. Naturally, they decide to become superheroes anyway — even if it means they have to work hard at it.</p>
-            <p><em>Almost Super</em> has been chosen by schools across the country as part of the <a href="https://readtothem.org/one-school-one-book/" target="_blank">One School, One Book</a> program, where entire schools — kindergarten through fifth grade — read the same book together as a community.</p>
-            <p>Its sequel, <em>Searching for Super</em>, continues the adventure.</p>
+            <p>Two brothers expect to receive amazing superpowers on their birthday. Instead, one gets the ability to change his belly button from an innie to an outie. On command. The other? You'll have to read the book to find out. Naturally, they decide to become superheroes anyway — even if it means they have to work hard at it.</p>
+            <p><em>Almost Super</em> has been chosen by schools across the country as part of the <a href="https://readtothem.org/one-school-one-book/" target="_blank" rel="noopener">One School, One Book</a> program, where entire schools — kindergarten through fifth grade — read the same book together as a community.</p>
             <div class="book-links">
-              <a class="book-link" href="https://www.kingsenglish.com/item/kmD66BQtTAjvpu06sTi6mA" target="_blank" rel="noopener">Almost Super →</a>
-              <a class="book-link" href="https://www.kingsenglish.com/item/kmD66BQtTAjrybu6CF5PwA" target="_blank" rel="noopener">Searching for Super →</a>
+              <a class="book-link" href="https://bookshop.org/p/books/almost-super-marion-jensen/e80c8d48f6745db8?ean=9780062209634" target="_blank" rel="noopener">Get it on Bookshop.org →</a>
             </div>
-            <p class="bookstore-note">Available at The King's English Bookshop — because local bookstores still exist, and they're wonderful.</p>
           </div>
         </div>
+      </div>
 
-        <div class="video-offer">
-          <p><strong>Reading <em>Almost Super</em> with your school?</strong> I'd love to record a short video message for your students. Drop me a line and let's make it happen.</p>
+      <div class="book-card">
+        <div class="book-card-inner">
+          <div class="book-cover">
+            <!-- Add searching-for-super-cover.jpg to this folder (same spot as index.html)
+                 and the cover will display automatically. -->
+            <img src="searching-for-super-cover.jpg" alt="Searching for Super book cover">
+          </div>
+          <div class="book-details">
+            <h2>Searching for Super</h2>
+            <div class="book-subtitle">The sequel · Published by HarperCollins</div>
+            <!-- MARION: blurb drafted from the publisher copy — tweak to taste. -->
+            <p>The superheroes of Split Rock have lost their powers, and everyone is hunkering down — which is really just a fancy way of saying they're hiding. Rafter Bailey is back, and with his brother Benny, his cousin Thimon, and his best friend Juanita, he's going to figure out what makes a hero when the powers are gone.</p>
+            <p>Just finished <em>Almost Super</em> with your class? This is the book to hand the kids who want to know what happens next.</p>
+            <div class="book-links">
+              <a class="book-link" href="https://bookshop.org/p/books/searching-for-super-marion-jensen/5ab99dbdf3cf5a90?ean=9780062209603" target="_blank" rel="noopener">Get it on Bookshop.org →</a>
+            </div>
+          </div>
         </div>
       </div>
+
+      <p class="bookstore-note">Every Bookshop.org order supports independent bookstores. Better yet — walk into your local bookshop and ask them to order a copy. They can get anything, and they're wonderful.</p>
+    </section>
+
+    <!-- Stat band -->
+    <section class="stat-band">
+      <p class="stat-number">100,000+ copies sold</p>
+      <p class="stat-caption">Thank you, readers. You're the real superheroes.</p>
+    </section>
+
+    <!-- Attributions are anonymized (role + state) since these came from private
+         emails. If a teacher gives written permission, swap in their name and
+         school here. -->
+    <section class="testimonials">
+      <h2>What Schools Are Saying</h2>
+      <blockquote>
+        “The book was a big hit at our school and the kids have LOVED it!”
+        <cite>— ELL director and teacher, Indiana</cite>
+      </blockquote>
+      <blockquote>
+        “We just ordered 10 copies of the sequel for our library. So many of our students want to keep reading after the program and book end.”
+        <cite>— Elementary principal, Alaska</cite>
+      </blockquote>
     </section>
 
     <!-- Contact -->
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
       <h2>Get in Touch</h2>
-      <p>Whether you're a school reading <em>Almost Super</em>, an educator interested in AI tutoring, or just someone who wants to say hello — I'd love to hear from you.</p>
-      <p class="email-display">marionjensen [at] gmail [dot] com</p>
+      <p>Whether you're a school reading <em>Almost Super</em>, a teacher or librarian with a question, or just someone who wants to say hello — I'd love to hear from you.</p>
+      <p class="email-display"><a data-email data-show href="#contact">marionjensen [at] gmail [dot] com</a></p>
     </section>
 
   </main>
 
-  <!-- Footer with ScaffoldAI -->
-  <footer class="site-footer">
-    <p>Interested in my technology tinkering? Check out <a href="https://github.com/marionjensen/ScaffoldAI" target="_blank" rel="noopener">ScaffoldAI</a>, my open-source AI tutor framework on GitHub.</p>
-  </footer>
+  <!-- Spam-resistant email links: the address never appears in the HTML source,
+       so harvester bots scraping the page can't collect it. The script assembles
+       it in the browser for real visitors. If JavaScript is off, visitors still
+       see the written-out address above. -->
+  <script>
+    (function () {
+      var user = ['mar', 'ion', 'jen', 'sen'].join('');
+      var host = ['gm', 'ail', '.com'].join('');
+      var addr = user + '@' + host;
+      document.querySelectorAll('[data-email]').forEach(function (el) {
+        var subject = el.getAttribute('data-subject');
+        el.href = 'mailto:' + addr + (subject ? '?subject=' + encodeURIComponent(subject) : '');
+        if (el.hasAttribute('data-show')) el.textContent = addr;
+      });
+    })();
+  </script>
 
 </body>
 </html>
